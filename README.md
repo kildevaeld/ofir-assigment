@@ -40,6 +40,12 @@ And finally start the server
 python manage.py runserver
 ```
 
+Or if you're using just:
+
+```
+just bootstrap run
+```
+
 ## Details
 
 ### Technology
