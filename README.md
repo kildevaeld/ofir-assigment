@@ -15,7 +15,7 @@ python -m pip install -r requirements.txt
 Next you'l need to initialize the database
 and import some data into it.
 
-You can use the [just](https://github.com/casey/just) tool and it's an oneliner!.
+You _can_ use the [just](https://github.com/casey/just) tool for that.
 
 _If you use just, the superuser user name will be `admin` and the password will be `password`._
 
@@ -25,7 +25,7 @@ _If you use just, the superuser user name will be `admin` and the password will 
 just bootstrap
 ```
 
-The manuel way:
+If you wont or can't use ```just```:
 
 ```bash
 python manage.py makemigrations
@@ -40,4 +40,28 @@ And finally start the server
 python manage.py runserver
 ```
 
+## Details
 
+### Technology
+I'm using Django restframework for the restful stuff under the `/api/*` urls.
+For dynamic updates on the client, I'm using [htmx](https://htmx.org/)
+I've also included the django htmx module for easier usage.
+Tailwindcss is used for styling.
+
+For scraping data [scrapy](https://scrapy.org/) is used.
+
+### Fixture data
+The data is scraped from ofir.dk
+You can run the scraping script by running ```python -m scrapy runspider ./scripts/spider.py -o fixtures/imports.jsonl``` and then import it with ```python manage.py import```.  
+Or if you're feeling fancy, you can use the oneliner: ```just import```.
+
+### Sitemap:
+
+```bash
+/ # Jobposting list
+/job/:id # Jobposting details
+/api/jobs # Restful jobpostings api
+/api/categories # Restful categories api
+/admin # Admin interface
+
+```
