@@ -9,7 +9,10 @@
                  hx-push-url="true"
                  hx-target="#results"
                  hx-trigger="change,keyup">
-                <form class="sticky top-12" id="form" method="GET" action="/">
+                <form class="sticky top-12"
+                      id="form"
+                      method="GET"
+                      action="{% url 'job-list' %}">
                     {% csrf_token %}
                     {{ form }}
                 </form>
