@@ -13,11 +13,11 @@ python -m pip install -r requirements.txt
 ```
 
 Next you'l need to initialize the database
-and import some data into it
+and import some data into it.
 
-You can use the [just](https://github.com/casey/just) tool and it's an oneliner!
+You can use the [just](https://github.com/casey/just) tool and it's an oneliner!.
 
-_If you use just, the superuser user name will be `admin` and the password will be `password`
+_If you use just, the superuser user name will be `admin` and the password will be `password`._
 
 ```bash
 # This will run migrations, import  data 
@@ -33,7 +33,6 @@ python manage.py migrate
 python manage.py createsuperuser # If you want access to the admin interface
 python manage.py import
 ```
-
 
 And finally start the server
 
