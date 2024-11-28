@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 import json
-from jobs.models import Job, Category
+from jobpostings.models import JobPosting, Category
 
 def load_jobs(path):
     with open(path, 'r') as json_file:
@@ -28,7 +28,7 @@ def import_job(job: dict):
     
     location = next(n for n in job['areas'] if n['type'] == 'CITY')
     
-    Job.objects.get_or_create(
+    JobPosting.objects.get_or_create(
         title = job['heading'],
         company = job['company_display_name']['name'],
         defaults = {
@@ -50,6 +50,6 @@ class Command(BaseCommand):
     
     def handle(self, *args, **options):
         
-        for next in load_jobs('./imports.jsonl'):
+        for next in load_jobs('./fixtures/imports.jsonl'):
             import_job(next)
         
