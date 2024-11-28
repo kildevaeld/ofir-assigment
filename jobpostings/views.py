@@ -39,7 +39,7 @@ class IndexView(ListView, FormMixin):
         if form.is_valid():
             data = form.cleaned_data
             if data['category']:
-                query = query.filter(category__title = data['category'])
+                query = query.filter(category__id = data['category'].id)
             if data['q']:
                 query = query.filter(title__icontains = data['q'])
         
