@@ -8,6 +8,7 @@ from .models import Category
 class JobPostingFilterForm(forms.Form):
     """
     JobPosting list filters
+    For now we can filter by catgory and/or title
     """
     category = forms.ModelChoiceField(
         queryset = Category.objects.all(),
