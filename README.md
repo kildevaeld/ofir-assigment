@@ -51,7 +51,7 @@ Tailwindcss is used for styling.
 For scraping data [scrapy](https://scrapy.org/) is used.
 
 ### Fixture data
-The data is scraped from ofir.dk
+The data is scraped from [ofir.dk](https://ofir.dk)
 You can run the scraping script by running ```python -m scrapy runspider ./scripts/spider.py -o fixtures/imports.jsonl``` and then import it with ```python manage.py import```.  
 Or if you're feeling fancy, you can use the oneliner: ```just import```.
 
