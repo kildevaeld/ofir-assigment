@@ -1,5 +1,5 @@
 from rest_framework import routers, serializers, viewsets
-from .models import JobPosting
+from .models import JobPosting, Category
 
 
 class JobPostingSerializer(serializers.HyperlinkedModelSerializer):
@@ -23,3 +23,19 @@ class JobPostingSerializer(serializers.HyperlinkedModelSerializer):
 class JobPostingViewSet(viewsets.ModelViewSet):
     queryset = JobPosting.objects.all()
     serializer_class = JobPostingSerializer
+    
+    
+    
+class CategorySerializer(serializers.HyperlinkedModelSerializer):
+    
+    class Meta:
+        model = Category
+        fields = [
+            'title',
+            'id'
+        ]
+        
+        
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
