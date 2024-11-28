@@ -1,3 +1,4 @@
+{% load i18n %}
 <ul class="flex flex-col gap-4">
     {% for job in object_list %}
         <li class="relative border border-solid border-gray-300 p-2 rounded">
@@ -9,6 +10,13 @@
             </a>
         </li>
     {% empty %}
-        <li>Ingen fundne stilling</li>
+        <li>
+            <div>{% translate 'Ingen fundne stilling' %}</div>
+            <div>
+                {% blocktranslate %}
+                    Prøv at rydde dine <a class="text-amber-500" href="/">filtre</a>
+                {% endblocktranslate %}
+            </div>
+        </li>
     {% endfor %}
 </ul>
