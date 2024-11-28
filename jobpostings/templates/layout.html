@@ -9,6 +9,13 @@
         <meta name="description" content="">
         <script src="https://unpkg.com/htmx.org@2.0.3"></script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+            @layer components {
+              .select, .input {
+                @apply border border-solid border-gray-400 rounded bg-white p-2;
+              }
+            }
+        </style>
     </head>
     <body>
         <main class="container mx-auto">
