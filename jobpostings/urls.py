@@ -7,7 +7,7 @@ router = routers.DefaultRouter()
 router.register(r'jobs', api.JobPostingViewSet)
 
 urlpatterns = [
-    path("", views.IndexView.as_view(), name = "jobposting-list"),
+    path("", views.IndexView.as_view(), name = 'job-list'),
     path("api/", include(router.urls))
 ]
 
