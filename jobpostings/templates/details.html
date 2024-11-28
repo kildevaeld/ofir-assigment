@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% block content %}
+    <div id="details" class="grid md:grid-cols-12 gap-x-6">
+        <div class="md:col-span-8">
+            <h1 class="text-2xl mb-4">{{ job.title }}</h1>
+            <div id="job-description">{{ job.description | safe }}</div>
+        </div>
+        <div class="md:col-span-4">
+            <h4 class="text-xl">{% translate  "Ansøg" %}</h4>
+            <p>
+                {% translate "Kommer snart" %}
+            </div>
+        </div>
+        <script>
+        // Remove border
+        const el = document.querySelector('#job-description > div');
+        el.style.border = '0'
+        el.style.padding = '0'
+        </script>
+        <style>
+        #job-description p {
+            margin-bottom: 1.2rem;
+        }
+        #job-description ul {
+            list-style: disc;
+            margin-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        </style>
+    {% endblock content %}

@@ -53,3 +53,8 @@ class IndexView(ListView, FormMixin):
         return context
     
     
+
+class JobPostingDetailView(DetailView):
+    model = JobPosting
+    template_name = "details.html"    
+    context_object_name = 'job'
