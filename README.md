@@ -48,6 +48,8 @@ just bootstrap run
 
 ## Details
 
+New jobs can be created via the admin interface or by posting to the `/api/jobs` endpoint (needs a authenticated user).
+
 ### Technology
 I'm using Django restframework for the restful stuff under the `/api/*` urls.
 For dynamic updates on the client, I'm using [htmx](https://htmx.org/)
