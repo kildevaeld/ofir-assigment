@@ -10,6 +10,7 @@ class Candidate(models.Model):
     def __str__(self):
         return self.name
 
+
 class Category(models.Model):
     title = models.CharField(_("title"), max_length=100, unique = True)
     
@@ -30,6 +31,7 @@ class JobPosting(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Application(models.Model):
     application_date = models.DateTimeField(_("Application date"), auto_now=False, auto_now_add=False)

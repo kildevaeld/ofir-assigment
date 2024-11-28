@@ -24,8 +24,7 @@ class JobPostingViewSet(viewsets.ModelViewSet):
     queryset = JobPosting.objects.all()
     serializer_class = JobPostingSerializer
     
-    
-    
+     
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
@@ -39,3 +38,4 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+

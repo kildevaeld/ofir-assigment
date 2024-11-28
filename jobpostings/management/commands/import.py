@@ -43,8 +43,6 @@ def import_job(job: dict):
     )
     
     
-    
-
 class Command(BaseCommand):
     help = "Import data"
     
