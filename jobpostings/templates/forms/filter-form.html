@@ -1,0 +1,11 @@
+{% load i18n %}
+<div class="flex flex-col gap-3">
+    <div>
+        <label for="{{ form.q.id_for_label }}">{% translate "Søg" %}</label>
+        <div class="mt-1">{{ form.q }}</div>
+    </div>
+    <div>
+        <label for="{{ form.category.id_for_label }}">{% translate "Kategori" %}</label>
+        <div class="mt-1">{{ form.category }}</div>
+    </div>
+</div>

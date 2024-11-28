@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:basis-60 hidden md:block"
+                 hx-get="{% url 'jobposting-list' %}"
+                 hx-params="category,q"
+                 hx-include="#form"
+                 hx-push-url="true"
+                 hx-target="#results"
+                 hx-trigger="change,keyup">
+                <form class="sticky top-12" id="form" method="GET" action="/">
+                    {% csrf_token %}
+                    {{ form }}
+                </form>
+            </div>
+            <div id="results" class="mb-6">{% include "partials/list.html" with object_list=object_list %}</div>
+        </div>
+    </div>
+{% endblock content %}
