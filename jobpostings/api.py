@@ -7,7 +7,17 @@ class JobPostingSerializer(serializers.HyperlinkedModelSerializer):
     category_id = serializers.IntegerField(write_only=True)
     class Meta:
         model = JobPosting
-        fields = ['title', 'company', "id", "description", "summary", "logo_url", "category", "category_id"]
+        fields = [
+            'title',
+            'company',
+            'id',
+            'description',
+            'summary',
+            'logo_url',
+            'category',
+            'category_id',
+            'posted_date',
+        ]
         
         
 class JobPostingViewSet(viewsets.ModelViewSet):
