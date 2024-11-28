@@ -1,0 +1,19 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% translate "Ofir jobbank" %}</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="description" content="">
+        <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <main class="container mx-auto">
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </body>
+</html>
