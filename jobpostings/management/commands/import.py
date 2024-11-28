@@ -25,7 +25,7 @@ def upsert_category(category):
 def import_job(job: dict):
     
     category = upsert_category(job['categories'][0])
-    
+    # We just use the city as location
     location = next(n for n in job['areas'] if n['type'] == 'CITY')
     
     JobPosting.objects.get_or_create(
